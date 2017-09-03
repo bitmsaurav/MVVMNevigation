@@ -18,7 +18,7 @@
                  Orientation="Vertical"
                  Spacing="15">
       <Label Text="Enter your name:" />
-      <Entry x:Name="NameEntry" Text="Jane Doe" />
+      <Entry x:Name="NameEntry1" Text="Jane Doe" />
       <Button x:Name="SayHelloButton" Text="Say Hello" Clicked="SayHelloButton_OnClicked" />
 
       <Label Text="Hello, XAML!"
@@ -32,15 +32,12 @@
         HorizontalOptions="Center"
         VerticalOptions="CenterAndExpand"
         BorderWidth="3"
-        Rotation="-15"
+        Rotation="0"
         TextColor="Red"
         Font="Large"
         Clicked="DoThisButton_OnClicked" />
 
-      <Label Text="Gender"/>
-      <Picker x:Name="GenderPicker" SelectedIndexChanged="GenderPicker_OnSelectedIndexChanged"/>
-
-      
+ 
     </StackLayout>
   </ContentPage.Content>
 

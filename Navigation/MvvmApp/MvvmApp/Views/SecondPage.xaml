@@ -8,18 +8,53 @@
     <viewModels:MainViewModel />
   </ContentPage.BindingContext>
 
-  <StackLayout Spacing="20">
-    <Label Text="INavigationService"
-           FontSize="40"
-           TextColor="Green"/>
-    <Button Text="Navigate to PersonList"
-            Command="{Binding NavigateToPersonPageCommand}"
-            TextColor="White"
-            BackgroundColor="Navy"
-            FontSize="40"/>
-    <Label Text="Second Page"
-           FontSize="100" />
+  <ContentPage.Padding>
+    <OnPlatform x:TypeArguments="Thickness"
+                iOS="20, 40, 20, 20"
+                Android="20, 20, 20, 20"
+                WinPhone="20, 20, 20, 20" />
+  </ContentPage.Padding>
+  <ContentPage.Content>
+    <StackLayout VerticalOptions="FillAndExpand"
+              HorizontalOptions="FillAndExpand"
+              Orientation="Vertical"
+              Spacing="15">
+      <Label Text="INavigationService"
+             FontSize="40"
+             TextColor="Green"/>
+      <Button Text="Navigate to PersonList"
+              Command="{Binding NavigateToPersonPageCommand}"
+              TextColor="White"
+              BackgroundColor="Navy"
+              FontSize="40"/>
+      <Label Text="Second Page"
+             FontSize="100" />
 
-  </StackLayout>
-  
+
+        <Label Text="Enter your name:" />
+        <Entry x:Name="NameEntry" Text="Jane Doe" />
+        <Button x:Name="SayHelloButton" Text="Say Hello" Clicked="SayHelloButton_OnClicked" />
+
+        <Label Text="Hello, XAML!"
+         VerticalOptions="Center"
+         FontAttributes="Bold"
+         FontSize="Large">
+        </Label>
+
+        <Button x:Name="DoThis"
+          Text="Do this!"
+          HorizontalOptions="Center"
+          VerticalOptions="CenterAndExpand"
+          BorderWidth="3"
+          Rotation="-15"
+          TextColor="Red"
+          Font="Large"
+          Clicked="DoThisButton_OnClicked" />
+
+        <Label Text="Gender"/>
+        <Picker x:Name="GenderPicker" SelectedIndexChanged="GenderPicker_OnSelectedIndexChanged"/>
+
+
+    </StackLayout>
+  </ContentPage.Content>
 </ContentPage>
