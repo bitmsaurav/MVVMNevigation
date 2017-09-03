@@ -19,6 +19,7 @@
             FontSize="40"/>
     <Label Text="Second Page"
            FontSize="100" />
+
   </StackLayout>
   
 </ContentPage>
