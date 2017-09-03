@@ -11,6 +11,7 @@ namespace MvvmApp.ViewModels
 
         public Command NavigateCommand { get; private set; }
         public Command NavigateBackCommand { get; private set; }
+        public Command NavigateToPersonPageCommand { get; private set; }
 
         public MainViewModel()
         {
@@ -26,6 +27,13 @@ namespace MvvmApp.ViewModels
                 var navigationService = new NavigationService();
 
                 navigationService.NavigateBack();
+            });
+
+            NavigateToPersonPageCommand = new Command(() =>
+            {
+                var navigationService = new NavigationService();
+
+                navigationService.NavigateToPersonPage();
             });
         }
 

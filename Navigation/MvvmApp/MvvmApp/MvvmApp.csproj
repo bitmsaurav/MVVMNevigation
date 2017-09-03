@@ -48,8 +48,8 @@
     <Compile Include="Views\FirstPage.xaml.cs">
       <DependentUpon>FirstPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\PersonList.xaml.cs">
-      <DependentUpon>PersonList.xaml</DependentUpon>
+    <Compile Include="Views\PersonListPage.xaml.cs">
+      <DependentUpon>PersonListPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\SecondPage.xaml.cs">
       <DependentUpon>SecondPage.xaml</DependentUpon>
@@ -92,7 +92,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Views\PersonList.xaml">
+    <EmbeddedResource Include="Views\PersonListPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

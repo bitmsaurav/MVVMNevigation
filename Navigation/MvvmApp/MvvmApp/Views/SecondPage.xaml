@@ -12,8 +12,8 @@
     <Label Text="INavigationService"
            FontSize="40"
            TextColor="Green"/>
-    <Button Text="Navigate Back"
-            Command="{Binding NavigateBackCommand}"
+    <Button Text="Navigate to PersonList"
+            Command="{Binding NavigateToPersonPageCommand}"
             TextColor="White"
             BackgroundColor="Navy"
             FontSize="40"/>

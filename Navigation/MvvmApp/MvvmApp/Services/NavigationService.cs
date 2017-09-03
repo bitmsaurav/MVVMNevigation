@@ -21,6 +21,12 @@ namespace MvvmApp.Services
             await currentPage.Navigation.PopModalAsync();
         }
 
+        public async void NavigateToPersonPage()
+        {
+            var currentPage = GetCurrentPage();
+            await currentPage.Navigation.PushModalAsync(new PersonListPage());
+        }
+
         private Page GetCurrentPage()
         {
             var currentPage = Application.Current.MainPage.Navigation.NavigationStack.LastOrDefault();
