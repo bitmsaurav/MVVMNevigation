@@ -18,14 +18,14 @@ namespace MvvmApp.Services
                 new Person
                 {
 
-                    Name = "Simon Di"
-                 //   BirthDay = DateTime.Today
+                    Name = "Simon Di",
+                    BirthDay = DateTime.Today
                 },
                  new Person
                 {
 
-                    Name = "Mello Di"
-                 //   BirthDay = DateTime.Today
+                    Name = "Mello Di",
+                    BirthDay = DateTime.Today
                 }
             };
             return list;

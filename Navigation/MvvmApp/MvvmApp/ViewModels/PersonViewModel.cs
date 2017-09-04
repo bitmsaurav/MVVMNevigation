@@ -16,7 +16,6 @@ namespace MvvmApp.ViewModels
         private List<Person> _personList;
         public List<Person> PersonList
         {
-          //  get { return _personList; }
             get { return _personList; }
 
             set

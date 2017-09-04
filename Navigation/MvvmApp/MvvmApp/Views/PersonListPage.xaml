@@ -4,8 +4,8 @@
              xmlns:sys="clr-namespace:System;assembly=mscorlib"
              x:Class="MvvmApp.Views.PersonListPage"
              xmlns:viewModels="clr-namespace:MvvmApp.ViewModels;assembly=MvvmApp"
-             Title="Employee List">
-  
+             Title="Person List">
+
   <ContentPage.Padding>
     <OnPlatform x:TypeArguments="Thickness"
                 iOS="20, 40, 20, 20"
@@ -21,19 +21,35 @@
       <Label Text="Enter your name:" />
       <Entry x:Name="NameEntry1" Text="Jane Doe" />
       <Button x:Name="SayHelloButton" Text="Say Hello" Clicked="SayHelloButton_OnClicked" />
-      
+
       <ListView x:Name="ListOfPersons" HasUnevenRows="True" >
         <ListView.ItemTemplate>
           <DataTemplate>
             <ViewCell>
-                <Label Text="{Binding Name}"/>
+              <ViewCell.View>
+                <Grid Padding="1">
+                  <Grid.RowDefinitions>
+                    <RowDefinition Height="12"></RowDefinition>
+                    <RowDefinition Height="12"></RowDefinition>
+                    <RowDefinition Height="12"></RowDefinition>
+                  </Grid.RowDefinitions>
+                  <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="3*"></ColumnDefinition>
+                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                  </Grid.ColumnDefinitions>
+
+                  <Button Grid.Row="0" Grid.Column="0" FontSize="24"  
+                          Text="New Birthday" BackgroundColor="Transparent" HorizontalOptions="Center" Grid.RowSpan="2"/>
+                  <Label Grid.Row="0" Grid.Column="1" Text="{Binding Name}" XAlign="Center" YAlign="Center" TextColor="Black" FontAttributes="Bold"/>
+                  <Label Grid.Row="0" Grid.Column="2" Text="{Binding BirthDay,StringFormat='{0:MMMM dd, yyyy}'}" XAlign="Center" YAlign="Center" TextColor="Black"/>
+                </Grid>
+              </ViewCell.View>
             </ViewCell>
           </DataTemplate>
         </ListView.ItemTemplate>
       </ListView>
-
     </StackLayout>
   </ContentPage.Content>
-
 
 </ContentPage>

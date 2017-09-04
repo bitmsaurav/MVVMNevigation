@@ -15,7 +15,8 @@ namespace MvvmApp
             InitializeComponent();
 
             MainPage = new NavigationPage(new FirstPage());
-           // MainPage = new NavigationPage(new PersonListPage());
+         //   MainPage = new NavigationPage(new SecondPage());
+            //MainPage = new NavigationPage(new PersonListPage());
         }
 
         protected override void OnStart()
