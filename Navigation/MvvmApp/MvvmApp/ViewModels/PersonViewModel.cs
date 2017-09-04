@@ -16,25 +16,30 @@ namespace MvvmApp.ViewModels
         private List<Person> _personList;
         public List<Person> PersonList
         {
+          //  get { return _personList; }
             get { return _personList; }
-            set {
-                _personList = value;
-                OnPerpertyChanged();
+
+            set
+            {
+                if (_personList != value)
+                {
+                    _personList = value;
+                    OnPropertyChanged();
+                }
             }
         }
 
         public PersonViewModel()
         {
             var personServices = new PersonService();
-
             PersonList = personServices.GetPersons();
         }
 
-        public event PropertyChangedEventHandler PerpertyChanged;
+        public event PropertyChangedEventHandler PropertyChanged;
 
-        public virtual void OnPerpertyChanged([CallerMemberName] string PropertyName = null)
+        public virtual void OnPropertyChanged([CallerMemberName] string PropertyName = null)
         {
-            PerpertyChanged?.Invoke(this, new PropertyChangedEventArgs(PropertyName));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(PropertyName));
         }
 
     }

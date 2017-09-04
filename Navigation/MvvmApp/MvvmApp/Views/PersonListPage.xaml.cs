@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MvvmApp.ViewModels;
 
 using Xamarin.Forms;
 
@@ -13,6 +14,8 @@ namespace MvvmApp.Views
         public PersonListPage()
         {
             InitializeComponent();
+            PersonViewModel personViewModel = new PersonViewModel();
+            ListOfPersons.ItemsSource = personViewModel.PersonList;
         }
 
 
@@ -20,13 +23,6 @@ namespace MvvmApp.Views
         {
             var name = NameEntry1.Text;
             await DisplayAlert("Greeting", $"Hello {name}!", "Howdy");
-        }
-
-
-        private async void DoThisButton_OnClicked(object sender, EventArgs e)
-        {
-            var text = DoThis.Text;
-            await DisplayAlert("Greeting", $"Hello {text}!", "Howdy");
         }
 
 
