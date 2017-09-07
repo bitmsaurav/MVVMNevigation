@@ -26,7 +26,7 @@ namespace MvvmApp
             // Handle when your app starts
             CrossConnectivity.Current.ConnectivityChanged += HandleConnectivityChanged;
             // To Use:  CrossConnectivity.Current.IsConnected  OR
-            //CrossConnectivity.Current.IsReachable("www.google.com", 5000);
+            //CrossConnectivity.Current.IsReachable(" www.consumerprotectionbc.ca", 5000);
 
         }
 

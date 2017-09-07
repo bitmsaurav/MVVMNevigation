@@ -47,7 +47,8 @@ namespace MvvmApp.Views
         }
         private void UpdateNetworkInfo(object sender, ConnectivityChangedEventArgs e)
         {
-            ConNet.Text = CrossConnectivity.Current.IsConnected.ToString();
+            // ConNet.Text = CrossConnectivity.Current.IsConnected.ToString();
+            ConNet.Text = CrossConnectivity.Current.IsReachable("www.consumerprotectionbc.ca", 5000).ToString();
             CrossConnectivity.Current.ConnectivityChanged += UpdateNetworkInfo;
         }
     }
