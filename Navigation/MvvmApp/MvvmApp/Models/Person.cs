@@ -10,7 +10,7 @@ namespace MvvmApp.Models
     {
         public string Name { get; set; }
 
-        public DateTime BirthDay { get; set; }
+        public DateTime? BirthDay { get; set; }
 
     }
 }

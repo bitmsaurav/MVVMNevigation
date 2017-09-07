@@ -49,6 +49,12 @@
           </DataTemplate>
         </ListView.ItemTemplate>
       </ListView>
+
+      
+      <Button Text="Specify Birthday" Command="{Binding ShowMyDatePicker}"/>
+      <Label x:name="MyBirthDay" Text="Jan 2, 2016"></Label>
+      
+      
     </StackLayout>
   </ContentPage.Content>
 
