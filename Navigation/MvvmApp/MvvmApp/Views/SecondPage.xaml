@@ -41,7 +41,9 @@
          FontSize="Large">
         </Label>
 
-        <Button x:Name="DoThis"
+      <Label x:Name="ConNet" TranslationX="0" TranslationY="100" VerticalOptions="Center" HorizontalOptions="Center" FontSize="Large" />
+
+      <Button x:Name="DoThis"
           Text="Do this!"
           HorizontalOptions="Center"
           VerticalOptions="CenterAndExpand"

@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 using Xamarin.Forms;
+using Plugin.Connectivity;
+using Plugin.Connectivity.Abstractions;
 
 namespace MvvmApp.Views
 {
@@ -33,6 +34,21 @@ namespace MvvmApp.Views
         private void GenderPicker_OnSelectedIndexChanged(object sender, EventArgs e)
         {
             var gender = GenderPicker.Items[GenderPicker.SelectedIndex];
+        }
+
+        protected override void OnAppearing()
+        {
+            ConNet.Text = CrossConnectivity.Current.IsConnected.ToString();
+            CrossConnectivity.Current.ConnectivityChanged += UpdateNetworkInfo;
+        }
+        protected override void OnDisappearing()
+        {
+            CrossConnectivity.Current.ConnectivityChanged -= UpdateNetworkInfo;
+        }
+        private void UpdateNetworkInfo(object sender, ConnectivityChangedEventArgs e)
+        {
+            ConNet.Text = CrossConnectivity.Current.IsConnected.ToString();
+            CrossConnectivity.Current.ConnectivityChanged += UpdateNetworkInfo;
         }
     }
 }
